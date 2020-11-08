@@ -1,0 +1,336 @@
+.about-wrapper {
+    display: grid;
+    margin-top: 15vh;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.about-wrapper p {
+    width: 100%;
+}
+
+.landing-page {
+    /*background-image: url('../img/landing-page.jpg');*/
+    background-image: url('../img/background3.png'); 
+    /*ackground-image: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1503023345310-bd7c1de61c7d%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26w%3D1000%26q%3D80&imgrefurl=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhuman&tbnid=wp1tdfttzeGYZM&vet=12ahUKEwiPstj46fDsAhUHzqwKHSfbAVIQMygBegUIARDTAQ..i&docid=ZaycYywhXLmIVM&w=1000&h=1250&q=images&safe=strict&ved=2ahUKEwiPstj46fDsAhUHzqwKHSfbAVIQMygBegUIARDTAQ';*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+}
+
+.about-page {
+    background-image: url('../img/landing-page.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+}
+a {
+    color: black;
+}
+input {
+    background: #ffffff4f;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.493);
+}
+landing-page input {
+    background: #ffffff4f;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.493);
+    text-align: center;
+}
+.container {
+    max-width: 90%;
+    
+}
+
+body {
+    background: white;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;    
+}
+
+
+
+.center-align {
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.title{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 4px;
+    align-items: center;
+    justify-items: center;
+    padding-top: 40vh;
+  }
+
+.home {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr 8fr;
+    padding: 2vh 2vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    /* font: 1.2em "Fira Sans" sans-serif; */
+    display: grid;
+    align-items: center;
+    grid-template-columns: 3fr 1fr;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a {
+    padding: 10px 3px;
+    text-decoration: none;
+    /* color: black; */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+
+
+.menu a:hover {
+    background: rgba(218, 218, 253, 0.301)
+    ;
+}
+
+.helpmenu {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(122, 32, 32);
+  background-color: rgba(170, 39, 39, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.helpCloseButton {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+.help-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.about-text {
+    text-align: center;
+    /* padding: 20px 20px; */
+    /* max-width: 60%; */
+    font-size: 22px;
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(75px, 1fr));
+    grid-gap: 10px;
+
+}
+.clock {
+    grid-row: 1/2;
+    grid-column: 1/4;
+    font-size: 25px;
+    letter-spacing: 5px;
+    padding: 25px 10px;
+}
+
+.widget {
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px rgba(151, 151, 151, 0.863);
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.widget:hover {
+    width: 103%;
+    height: 103%;
+}
+
+.widget div {
+    transition: all 0.3s;
+    opacity: 0;
+    margin: 2px 3px;
+    padding: 2px 3px;
+    border-radius: 5px;
+}
+.widget-edit-button{
+    width: min-content;
+    height: min-content;
+}
+.widget-edit-button:hover {
+    background-color: rgba(10, 12, 145, 0.301);
+}
+.widget:hover div {
+    opacity: 1;
+}
+
+.empty-widget {
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 0px 0px rgba(151, 151, 151, 0.295);
+}
+
+.empty-widget:hover {
+    background-color: rgba(155, 155, 155, 0.212) !important;
+}
+
+
+/* Widgets */
+#time-weather {
+    text-align: center;
+    align-content: center;
+}
+
+
+.bg-modal {
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-left: 0;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    z-index: 1;
+    padding: 20px;
+    min-width: 600px;
+    width: auto;
+    height: auto;
+    /* background-color: #212121; */
+    border-radius: 4px;
+}
+
+.edit-delete {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.empty-widget:hover {
+    background-color: rgba(155, 155, 155, 0.212) !important;
+}
+
+
+/* Widgets */
+#time-weather {
+    text-align: center;
+    align-content: center;
+}
+
+
+.bg-modal {
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-left: 0;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    z-index: 1;
+    padding: 20px;
+    min-width: 600px;
+    width: auto;
+    height: auto;
+    /* background-color: #212121; */
+    border-radius: 4px;
+}
+
+.edit-delete {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.color-button-size .btn {
+    width: 50px !important;
+    height: 50px !important;
+    border: none;
+}
+
+/* Color Selections */
+#forest-green {
+    background-color: #3DB85E;
+}
+
+#lime {
+    background-color: #87FF91;
+}
+
+#turquoise {
+    background-color: #7EE7D0;
+}
+
+#sky-blue {
+    background-color: skyblue;
+}
+
+#pink {
+    background-color: #FFDDF9;
+}
+
+#purple {
+    background-color: #FD9AFF;
+}
+
+#red {
+    background-color: #FF6767;
+}
+
+#light-mode {
+    background-color: #F8F8F8;
+}
+
+#dark-mode {
+    background-color: #3A3A3A;
+}
+
+.color-button-size img {
+    max-width: 28px;
+    max-height: 28px;
+}
+
+.changeName #setName {
+    margin-top: 10px;
+}
