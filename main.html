@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./img/icon.png">
+
+        <title>Hub</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+
+    <!-- body onload="outputName()" -->
+    <body onload="initialize()">
+        <div class="home">
+            <header class="header">
+                <div>
+                    <h1 class="display-4" id="outputText"></h1>
+                </div>
+                
+                <div class="menu">
+                    <!-- Add settings menu -->
+                    <a href="#" id="open-settings">Settings</a>
+                    <a href="#" onclick="openhelp()">Help</a>
+                    <a href="./about.html">About</a>
+                </div>
+
+            </header>
+            
+            <div class="bg-modal" id="settings-modal">
+                <div class="modal-content">
+                    <div class="close" id="settings-close">+</div>
+    
+                    <form action="">
+
+                        <div class="center-align">
+                            <div class="color-button-size">
+                                <h3>Colours</h3>
+                                <button type="button" class="btn btn-primary" id="forest-green"></button>
+                                <button type="button" class="btn btn-primary" id="lime"></button>
+                                <button type="button" class="btn btn-primary" id="turquoise"></button>
+                                <button type="button" class="btn btn-primary" id="sky-blue"></button>
+                                <button type="button" class="btn btn-primary" id="pink"></button>
+                                <button type="button" class="btn btn-primary" id="purple"></button>
+                                <button type="button" class="btn btn-primary" id="red"></button>
+                                <button type="button" class="btn btn-primary" id="light-mode"><img class="icons" src="img/sun.png"></button>
+                                <button type="button" class="btn btn-primary" id="dark-mode"><img class="icons" src="img/moon.png"></button>
+                            </div>
+                        </div>
+                        
+                        <br>
+
+                        <div class="center-align">
+                            <div class="changeName">
+                                <h3>Want to Change your Name?</h3>
+                                <input class="p-1" id="name" type="text" placeholder="Your Name" style="text-align: center !important">
+                                <br>
+                                <button class="btn btn-outline-dark" id="setName" onclick="resetName()">Set Name</button>
+                                
+                            </div>
+                        </div>
+                        
+                    </form>
+
+                </div> 
+            </div>
+
+
+            <!-- help button, need to add pictures-->
+    <div class="bg-modal" id="help">
+        <div class="modal-content">
+            <p class="close" onclick="closehelp()">+</p>
+    
+            <h1 class="display-5">Help</h1>
+            <br>
+            <img src="./img/unknown-1.png" alt="back to hub picture" width="100" height="40">
+            <p>To get back to your hub, click the "Back To Hub" button on the top right</p>
+            <img src="./img/unknown.png" alt="Home picture" width="100" height="40">
+            <p>To get back home, click the "Home" button on the top right</p>
+            <img src="./img/unknown-2.png" alt="add widget" width="400" height="400">
+            <p>To add a widget, click an empty space on the Hub page and fill out the form!</p>
+    
+        </div>
+    </div>
+            <!--
+            <button type="button" data-toggle="modal" data-target="popupForm">Settings</button>
+
+            <div id="popupForm" tabindex="-1" role="dialong">
+                
+            </div>
+            -->
+            <!--
+            <div class=popupForm id="settingsMenu">
+                <form action=" ">
+                    <h2>Settings</h2>
+                    <input type="text" placeholder="hello">
+                    <button onclick="applySettings()">Apply Changes</button>
+                </form>
+            </div>
+            -->
+            
+            <div class="grid" id="widget-grid">
+                <div id="time-weather" class="clock widget" onload="showTimeWeather()"></div>
+                <div class="widget empty-widget" onclick="addNew(0)"></div>
+                <div class="widget empty-widget" onclick="addNew(1)"></div>
+                <div class="widget empty-widget" onclick="addNew(2)"></div>
+                <div class="widget empty-widget" onclick="addNew(3)"></div>
+                <div class="widget empty-widget" onclick="addNew(4)"></div>
+                <div class="widget empty-widget" onclick="addNew(5)"></div>
+                <div class="widget empty-widget" onclick="addNew(6)"></div>
+                <div class="widget empty-widget" onclick="addNew(7)"></div>
+                <div class="widget empty-widget" onclick="addNew(8)"></div>
+                <div class="widget empty-widget" onclick="addNew(9)"></div>
+                <div class="widget empty-widget" onclick="addNew(10)"></div>
+                <div class="widget empty-widget" onclick="addNew(11)"></div>
+                <div class="widget empty-widget" onclick="addNew(12)"></div>
+                <div class="widget empty-widget" onclick="addNew(13)"></div>
+                <div class="widget empty-widget" onclick="addNew(14)"></div>
+                <div class="widget empty-widget" onclick="addNew(15)"></div>
+                <div class="widget empty-widget" onclick="addNew(16)"></div>
+                <div class="widget empty-widget" onclick="addNew(17)"></div>
+                <div class="widget empty-widget" onclick="addNew(18)"></div>
+                <div class="widget empty-widget" onclick="addNew(19)"></div>
+                <div class="widget empty-widget" onclick="addNew(20)"></div>
+                <div class="widget empty-widget" onclick="addNew(21)"></div>
+                <div class="widget empty-widget" onclick="addNew(22)"></div>
+                <div class="widget empty-widget" onclick="addNew(23)"></div>
+                <div class="widget empty-widget" onclick="addNew(24)"></div>
+                <div class="widget empty-widget" onclick="addNew(25)"></div>
+                <div class="widget empty-widget" onclick="addNew(26)"></div>
+                <div class="widget empty-widget" onclick="addNew(27)"></div>
+                <div class="widget empty-widget" onclick="addNew(28)"></div>
+                <div class="widget empty-widget" onclick="addNew(29)"></div>
+                <div class="widget empty-widget" onclick="addNew(30)"></div>
+                <div class="widget empty-widget" onclick="addNew(31)"></div>
+                <div class="widget empty-widget" onclick="addNew(32)"></div>
+                <div class="widget empty-widget" onclick="addNew(33)"></div>
+                <div class="widget empty-widget" onclick="addNew(34)"></div>
+                <div class="widget empty-widget" onclick="addNew(35)"></div>
+                <div class="widget empty-widget" onclick="addNew(36)"></div>
+                <div class="widget empty-widget" onclick="addNew(37)"></div>
+                <div class="widget empty-widget" onclick="addNew(38)"></div>
+                <div class="widget empty-widget" onclick="addNew(39)"></div>
+                <div class="widget empty-widget" onclick="addNew(40)"></div>
+                <div class="widget empty-widget" onclick="addNew(41)"></div>
+                <div class="widget empty-widget" onclick="addNew(42)"></div>
+                <div class="widget empty-widget" onclick="addNew(43)"></div>
+                <div class="widget empty-widget" onclick="addNew(44)"></div>
+                <div class="widget empty-widget" onclick="addNew(45)"></div>
+                <div class="widget empty-widget" onclick="addNew(46)"></div>
+                <div class="widget empty-widget" onclick="addNew(47)"></div>
+                <div class="widget empty-widget" onclick="addNew(48)"></div>
+                <div class="widget empty-widget" onclick="addNew(49)"></div>
+                <div class="widget empty-widget" onclick="addNew(50)"></div>
+                <div class="widget empty-widget" onclick="addNew(51)"></div>
+                <div class="widget empty-widget" onclick="addNew(52)"></div>
+                <div class="widget empty-widget" onclick="addNew(53)"></div>
+                <div class="widget empty-widget" onclick="addNew(54)"></div>
+                <div class="widget empty-widget" onclick="addNew(55)"></div>
+                <div class="widget empty-widget" onclick="addNew(56)"></div>
+                <div class="widget empty-widget" onclick="addNew(57)"></div>
+                <div class="widget empty-widget" onclick="addNew(58)"></div>
+                <div class="widget empty-widget" onclick="addNew(59)"></div>
+                <div class="widget empty-widget" onclick="addNew(60)"></div>
+                <div class="widget empty-widget" onclick="addNew(61)"></div>
+                <div class="widget empty-widget" onclick="addNew(62)"></div>
+                <div class="widget empty-widget" onclick="addNew(63)"></div>
+                <div class="widget empty-widget" onclick="addNew(64)"></div>
+                <div class="widget empty-widget" onclick="addNew(65)"></div>
+                <div class="widget empty-widget" onclick="addNew(66)"></div>
+                <div class="widget empty-widget" onclick="addNew(67)"></div>
+                <div class="widget empty-widget" onclick="addNew(68)"></div>
+                <div class="widget empty-widget" onclick="addNew(69)"></div>
+                <div class="widget empty-widget" onclick="addNew(70)"></div>
+                <div class="widget empty-widget" onclick="addNew(71)"></div>
+                <div class="widget empty-widget" onclick="addNew(72)"></div>
+                <div class="widget empty-widget" onclick="addNew(73)"></div>
+                <div class="widget empty-widget" onclick="addNew(74)"></div>
+                <div class="widget empty-widget" onclick="addNew(75)"></div>
+                <div class="widget empty-widget" onclick="addNew(76)"></div>
+                <div class="widget empty-widget" onclick="addNew(77)"></div>
+                <div class="widget empty-widget" onclick="addNew(78)"></div>
+                <div class="widget empty-widget" onclick="addNew(79)"></div>
+                <div class="widget empty-widget" onclick="addNew(80)"></div>
+                <div class="widget empty-widget" onclick="addNew(81)"></div>
+                <div class="widget empty-widget" onclick="addNew(82)"></div>
+                <div class="widget empty-widget" onclick="addNew(83)"></div>
+                <div class="widget empty-widget" onclick="addNew(84)"></div>
+                <div class="widget empty-widget" onclick="addNew(85)"></div>
+                <div class="widget empty-widget" onclick="addNew(86)"></div>
+                <div class="widget empty-widget" onclick="addNew(87)"></div>
+                <div class="widget empty-widget" onclick="addNew(88)"></div>
+                <div class="widget empty-widget" onclick="addNew(89)"></div>
+                <div class="widget empty-widget" onclick="addNew(90)"></div>
+                <div class="widget empty-widget" onclick="addNew(91)"></div>
+                <div class="widget empty-widget" onclick="addNew(92)"></div>
+                <div class="widget empty-widget" onclick="addNew(93)"></div>
+                <div class="widget empty-widget" onclick="addNew(94)"></div>
+                <div class="widget empty-widget" onclick="addNew(95)"></div>
+                <div class="widget empty-widget" onclick="addNew(96)"></div>
+                <div class="widget empty-widget" onclick="addNew(97)"></div>
+                <div class="widget empty-widget" onclick="addNew(98)"></div>
+                <div class="widget empty-widget" onclick="addNew(99)"></div>
+                <div class="widget empty-widget" onclick="addNew(100)"></div>
+                <div class="widget empty-widget" onclick="addNew(101)"></div>
+                <div class="widget empty-widget" onclick="addNew(101)"></div>
+                <div class="widget empty-widget" onclick="addNew(102)"></div>
+                <div class="widget empty-widget" onclick="addNew(103)"></div>
+                <div class="widget empty-widget" onclick="addNew(104)"></div>
+                <div class="widget empty-widget" onclick="addNew(105)"></div>
+                <div class="widget empty-widget" onclick="addNew(106)"></div>
+                <div class="widget empty-widget" onclick="addNew(107)"></div>
+                <div class="widget empty-widget" onclick="addNew(108)"></div>
+                <div class="widget empty-widget" onclick="addNew(109)"></div>
+                <div class="widget empty-widget" onclick="addNew(110)"></div>
+                <div class="widget empty-widget" onclick="addNew(111)"></div>
+                <div class="widget empty-widget" onclick="addNew(112)"></div>
+                <div class="widget empty-widget" onclick="addNew(113)"></div>
+                <div class="widget empty-widget" onclick="addNew(114)"></div>
+                <div class="widget empty-widget" onclick="addNew(115)"></div>
+                <div class="widget empty-widget" onclick="addNew(116)"></div>
+                <div class="widget empty-widget" onclick="addNew(117)"></div>
+                <div class="widget empty-widget" onclick="addNew(118)"></div>
+                <div class="widget empty-widget" onclick="addNew(119)"></div>
+
+        
+            </div>
+            <div class="bg-modal" id="add-new-modal">
+                <div class="modal-content">
+                    <div class="close" id="add-new-close">+</div>
+                    <h1 class="display-6">Add Widget!</h1><br>
+
+                    <!-- make a good css class for these -->
+                    <label style="margin: 0">Website Name</label>
+                    <input class="p-1" id="name-link" type="text" placeholder="Website Title..." required><br>
+                    <label style="margin: 0">URL</label>
+                    <input class="p-1" id="link" type="url" placeholder="Your Link..." required><br>
+                    <label style="margin: 0">Background Image</label>
+                    <input type="file" accept= "image/*" id="photo" required><br>
+                    <label style="margin: 0">Width of Widget</label>
+                    <input class="p-1" id="width" type="number" placeholder="Width (1-12)" min="1" max="12" required><br>
+                    <label style="margin: 0">Height of Widget</label>
+                    <input class="p-1" id="height" type="number" placeholder="Height (1-5)" min="1" max="5" required><br>
+                    
+                    <!-- previously had: onclick="storeinput()"-->
+                    <button class="btn btn-outline-dark" id="add" style="margin: 15px" onclick="storeinput()">Add!</button> 
+                    
+                    <!--
+                    <script>
+                        document.querySelector('#photo').addEventListener("change", function() {
+                            const reader = new FileReader();
+
+                            reader.addEventListener("load", function() {
+                                localStorage.setItem("recent-image", reader.result);
+                            });
+
+                            reader.readAsDataURL(this.files[0]);
+                        });
+
+                        document.querySelector('#add').addEventListener("click", function() {
+                            const recentImageDataUrl = localStorage.getItem("recent-image");
+
+                            if (recentImageDataUrl) {
+                                addLinkWidget(col, row, parseInt(myStorage.getItem('width')),
+                                 parseInt(myStorage.getItem('height')), myStorage.getItem('title'),
+                                  myStorage.getItem('link'), "red", recentImageDataUrl)
+                            }
+                        });
+                    </script> -->
+
+                </div>
+
+                
+            </div>
+
+            <div class="bg-modal" id="edit-modal">
+                <div class="modal-content">
+                    <div class="close" id="edit-close">+</div>
+                    <h1 class="display-6">Edit</h1>
+                    <br>
+
+                    <label style="margin: 0">Website Name</label>
+                    <input class="p-1" id="edit-name-link" type="text" placeholder="Website Title..." required><br>
+                    <label style="margin: 0">URL</label>
+                    <input class="p-1" id="edit-link" type="url" placeholder="Your Link..." required><br>
+                    <label for="file" style="cursor: pointer;">Background Image</label>
+                    <input type="file" id="edit-photo" name="image" accept="image/*"><br>
+                    <label style="margin: 0">Width of Widget</label>
+                    <input class="p-1" id="edit-width" type="number" placeholder="Width (1-12)" min="1" max="12" required><br>
+                    <label style="margin: 0">Height of Widget</label>
+                    <input class="p-1" id="edit-height" type="number" placeholder="Height (1-5)" min="1" max="5" required><br>
+                    
+                    <div class="edit-delete">
+                        <!-- onclick="updateWidget()"" -->
+                    <button class="btn btn-outline-dark" id="edit-widget" style="margin: 5px 5px">Edit</button>
+                    <button class="btn btn-outline-dark" id="delete" style="margin: 5px 5px" onclick="deleteWidget()">Delete</button>
+                </div>
+                    <!-- <button class="btn btn-outline-dark" id="add" style="margin: 15px" onclick="storeinput()">Add!</button> -->
+                
+
+                </div>
+
+                
+            </div>
+            
+        </div>
+
+
+        <script type="text/javascript" src="js/script.js"></script>
+
+        
+    </body>
+</html>
+
+
+
